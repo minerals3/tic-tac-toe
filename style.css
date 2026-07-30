@@ -1,0 +1,61 @@
+#box0{
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    background-color: white;
+}
+
+#box1{
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    background-color: white;
+}
+
+#box2{
+    border: solid black;
+    border-width: 0 0 2px 0;
+    background-color: white;
+}
+
+#box3{
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    background-color: white;
+}
+
+#box4{
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    background-color: white;
+}
+
+
+#box5{
+    border: solid black;
+    border-width: 0 0 2px 0;
+    background-color: white;
+}
+
+#box6{
+    border: solid black;
+    border-width: 0 2px 0 0;
+    background-color: white;
+}
+
+#box7{
+    border: solid black;
+    border-width: 0 2px 0 0;
+    background-color: white;
+}
+
+#box8{
+    border: solid black;
+    border-width: 0 0 0 0;
+    background-color: white;
+}
+
+
+.button-box{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+}
