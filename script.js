@@ -31,7 +31,7 @@ const checkWinner = () => {
 
         if(pos0Val !== ""  && pos1Val !== "" && pos2Val !== ""){
         if(pos0Val == pos1Val && pos1Val == pos2Val){
-            console.log("Winner");
+            console.log("Winner", pos0Val);
             }
         }
     }
@@ -43,10 +43,10 @@ const reset_game = () => {
     turn0 = true;
 
     but.forEach ((el) => {
-            but.innerText = "";
-            but.disabled = false;
-        });       
-}
+        but.innerText = "";
+        but.disabled = false;
+    });       
+};
 
 reset.addEventListener("click", reset_game);
 

@@ -1,3 +1,8 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     text-align: center;
     background-color:#F39399;
@@ -38,7 +43,19 @@ body{
     padding: 1rem;
 }
 
+.newgame{
+    border-radius: 1rem;
+    border-color: brown;
+    background-color: brown;
+    color: #F6D8BD;
+    padding: 1rem;
+}
 
+#msg{
+    color: aliceblue;
+    font-size: 8vmin;
+    margin: 1rem;
+}
 
 
 
