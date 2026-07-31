@@ -1,61 +1,46 @@
-#box0{
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    background-color: white;
+body{
+    text-align: center;
+    background-color:#F39399;
+    color: aliceblue;;
 }
 
-#box1{
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    background-color: white;
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#box2{
-    border: solid black;
-    border-width: 0 0 2px 0;
-    background-color: white;
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 1rem;
 }
 
-#box3{
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    background-color: white;
+.button{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 10%;
+    border-style: none;
+    background-color: #92003A ;
+    color: #F6D8BD;
+    font-size: 8vmin;
 }
 
-#box4{
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    background-color: white;
-}
-
-
-#box5{
-    border: solid black;
-    border-width: 0 0 2px 0;
-    background-color: white;
-}
-
-#box6{
-    border: solid black;
-    border-width: 0 2px 0 0;
-    background-color: white;
-}
-
-#box7{
-    border: solid black;
-    border-width: 0 2px 0 0;
-    background-color: white;
-}
-
-#box8{
-    border: solid black;
-    border-width: 0 0 0 0;
-    background-color: white;
+.reset{
+    border-radius: 1rem;
+    border-color: brown;
+    background-color: brown;
+    color: #F6D8BD;
+    padding: 1rem;
 }
 
 
-.button-box{
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-}
+
+
+
