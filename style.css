@@ -76,3 +76,22 @@ body{
     align-items: center;
     gap: 1rem;
 }
+
+.drawmsg{
+    color: red;
+    margin: 1rem;
+    font-size: 3rem;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

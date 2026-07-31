@@ -5,8 +5,9 @@ let msgcontainer = document.querySelector(".msgcontainer");
 let msg = document.querySelector("#msg");
 let xscore = document.querySelector("#x-score");
 let oscore = document.querySelector("#o-score");
+let draw = document.querySelector(".drawmsg");
 
-
+let count = 0;
 let score0 = 0;
 let scoreX = 0;
 let turn0 = true;
@@ -27,7 +28,16 @@ but.forEach((el) => {
         }
         el.disabled = true;
 
-        checkWinner();
+        count++;
+        
+        let isWinner = checkWinner();
+
+        console.log(count, isWinner);
+
+        if(count === 9 && !isWinner){
+            console.log("draw");
+            draw.classList.remove("hide");
+        }
     });
 });
 
@@ -41,11 +51,12 @@ const checkWinner = () => {
         if(pos0Val == pos1Val && pos1Val == pos2Val){
             console.log("Winner", pos0Val);
             showWinner(pos0Val);
+            return true;
             }
         }
     }
 
-    
+    return false;
 };
 
 const disable = () => {
@@ -75,7 +86,9 @@ const showWinner = (winner) => {
 
 const reset_game = () => {
     turn0 = true;
+    count = 0;
     msgcontainer.classList.add("hide");
+    draw.classList.add("hide");
     enable();
 
     but.forEach ((el) => {
@@ -97,4 +110,5 @@ const new_game = () => {
 };
 
 newgame.addEventListener("click", new_game);
+
 
