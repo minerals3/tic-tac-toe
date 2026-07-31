@@ -1,5 +1,10 @@
 let but = document.querySelectorAll(".button");
 let reset = document.querySelector(".reset");
+let newgame = document.querySelector(".newgame");
+let msgcontainer = document.querySelector(".msgcontainer");
+let msg = document.querySelector("#msg");
+
+
 
 let turn0 = true;
 
@@ -32,6 +37,7 @@ const checkWinner = () => {
         if(pos0Val !== ""  && pos1Val !== "" && pos2Val !== ""){
         if(pos0Val == pos1Val && pos1Val == pos2Val){
             console.log("Winner", pos0Val);
+            showWinner(pos0Val);
             }
         }
     }
@@ -39,14 +45,48 @@ const checkWinner = () => {
     
 };
 
+const disable = () => {
+    for(let box of but){
+        box.disabled = true;
+    }
+};
+
+const enable = () => {
+    for(let box of but){
+        box.disabled = false;
+    }
+};
+
+const showWinner = (winner) => {
+    msg.innerText = `Congratulations the winner is: ${winner}`;
+    msgcontainer.classList.remove("hide");
+    disable();
+};
+
 const reset_game = () => {
     turn0 = true;
+    msgcontainer.classList.add("hide");
+    enable();
 
     but.forEach ((el) => {
-        but.innerText = "";
-        but.disabled = false;
+        el.innerText = "";
+        el.disabled = false;
     });       
 };
 
 reset.addEventListener("click", reset_game);
+
+const new_game = () => {
+    turn0 = true;
+    msgcontainer.classList.add("hide");
+    enable();
+
+    but.forEach ((el) => {
+        el.innerText = "";
+        el.disabled = false;
+    });
+};
+
+newgame.addEventListener("click", new_game);
+
 
