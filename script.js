@@ -3,9 +3,12 @@ let reset = document.querySelector(".reset");
 let newgame = document.querySelector(".newgame");
 let msgcontainer = document.querySelector(".msgcontainer");
 let msg = document.querySelector("#msg");
+let xscore = document.querySelector("#x-score");
+let oscore = document.querySelector("#o-score");
 
 
-
+let score0 = 0;
+let scoreX = 0;
 let turn0 = true;
 
 let win_pat = [
@@ -61,6 +64,13 @@ const showWinner = (winner) => {
     msg.innerText = `Congratulations the winner is: ${winner}`;
     msgcontainer.classList.remove("hide");
     disable();
+    if(winner === "X"){
+        scoreX++;
+        xscore.innerText = scoreX;
+    } else {
+        score0++;
+        oscore.innerText = score0;
+    }
 };
 
 const reset_game = () => {
@@ -77,16 +87,14 @@ const reset_game = () => {
 reset.addEventListener("click", reset_game);
 
 const new_game = () => {
-    turn0 = true;
-    msgcontainer.classList.add("hide");
-    enable();
+     reset_game();
 
-    but.forEach ((el) => {
-        el.innerText = "";
-        el.disabled = false;
-    });
+    score0 = 0;
+    scoreX = 0;
+
+    document.querySelector("#x-score").innerText = scoreX;
+    document.querySelector("#o-score").innerText = score0;
 };
 
 newgame.addEventListener("click", new_game);
-
 
