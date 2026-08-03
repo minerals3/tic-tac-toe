@@ -6,6 +6,9 @@ let msg = document.querySelector("#msg");
 let xscore = document.querySelector("#x-score");
 let oscore = document.querySelector("#o-score");
 let draw = document.querySelector(".drawmsg");
+let start_menu = document.querySelector(".start-menu")
+let start_but = document.querySelector("#start-button");
+let main_game = document.querySelector(".main-game");
 
 let count = 0;
 let score0 = 0;
@@ -16,6 +19,18 @@ let win_pat = [
     [0,1,2], [3,4,5], [6,7,8],
     [0,3,6], [1,4,7], [2,5,8],
     [0,4,8], [6,4,2]];
+
+start_but.addEventListener("click", () => {
+    start_but.classList.add("popclass");
+
+    setTimeout(() => {
+        start_menu.classList.add("hide");
+        main_game.classList.remove("hide");
+
+        
+        start_but.classList.remove("popclass");
+    }, 600); 
+});
 
 but.forEach((el) => {
     el.addEventListener("click", () => {
