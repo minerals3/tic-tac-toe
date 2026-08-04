@@ -19,6 +19,8 @@
     
     <p class="drawmsg hide">Draw</p>
 
+    <p class="turn ">Player O's turn</p>
+
     <div class="main-game hide">
         <div class="container">
             <div class="game">
@@ -35,13 +37,18 @@
         </div>
 
         <div class="score-board">
-            <button id="x-score-button" role="x-score" class="scorebutton"><p id="xscoremsg" class="sbmsg">Player X</p><span id="x-score">0</span></button>
-            <button id="o-score-button" role="o-score" class="scorebutton"><p id="oscoremsg" class="sbmsg">Player O</p><span id="o-score">0</span></button>
+            <button id="x-score-button" role="x-score" class="scorebutton"><p id="xscoremsg" class="sbmsg">Player &#10060;</p><span id="x-score">0</span></button>
+            <button id="o-score-button" role="o-score" class="scorebutton"><p id="oscoremsg" class="sbmsg">Player &#11093;</p><span id="o-score">0</span></button>
         </div>
 
         <div class="panel">
-            <button class="newgame">New Game</button>
-            <button class="reset">Reset Round</button>
+            <div class="round-container">
+                <button class="reset">Reset Round</button>
+                <button class="next">Next Round</button>
+            </div>
+            <div class="newgame-container">
+                <button class="newgame">New Game</button>
+            </div>
         </div>
     </div>
 

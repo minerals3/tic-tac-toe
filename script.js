@@ -9,6 +9,7 @@ let draw = document.querySelector(".drawmsg");
 let start_menu = document.querySelector(".start-menu")
 let start_but = document.querySelector("#start-button");
 let main_game = document.querySelector(".main-game");
+let turn = document.querySelector(".turn");
 
 let count = 0;
 let score0 = 0;
@@ -35,9 +36,11 @@ start_but.addEventListener("click", () => {
 but.forEach((el) => {
     el.addEventListener("click", () => {
         if(turn0){
+            turn.innerText = "Player X's turn";
             el.innerText = "O";
             turn0 = false;
         } else {
+            turn.innerText = "Player O's turn";
             el.innerText = "X";
             turn0 = true;
         }
@@ -87,7 +90,7 @@ const enable = () => {
 };
 
 const showWinner = (winner) => {
-    msg.innerText = `Congratulations the winner is: ${winner}`;
+    msg.innerText = `Winner : ${winner}`;
     msgcontainer.classList.remove("hide");
     disable();
     if(winner === "X"){

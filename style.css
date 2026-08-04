@@ -43,7 +43,7 @@ body{
         opacity: 0;
     }
     70% {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1);
@@ -51,10 +51,16 @@ body{
     }
 }
 
+.turn{
+    margin-top: 1rem;
+    color: #ed1e63;
+}
+
 .main-game{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-height: 100vmin;
 }
 
 .container{
@@ -108,6 +114,16 @@ body{
     0 0 20px hotpink;
 }
 
+.next{
+    border-radius: 1rem;
+    border-color: brown;
+    background-color: brown;
+    color: #F6D8BD;
+    padding: 1rem;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2),
+    0 0 20px hotpink;
+}
+
 .newgame{
     border-radius: 1rem;
     border-color: brown;
@@ -148,7 +164,6 @@ body{
     color: red;
     margin: 1rem;
     font-size: 5rem;
-    height: 100vmin;
     animation: pulse 1s infinite;
 }
 
@@ -180,6 +195,7 @@ body{
 
 .panel{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
