@@ -10,6 +10,7 @@ let start_menu = document.querySelector(".start-menu")
 let start_but = document.querySelector("#start-button");
 let main_game = document.querySelector(".main-game");
 let turn = document.querySelector(".turn");
+let next = document.querySelector(".next");
 
 let count = 0;
 let score0 = 0;
@@ -69,6 +70,8 @@ const checkWinner = () => {
         if(pos0Val == pos1Val && pos1Val == pos2Val){
             console.log("Winner", pos0Val);
             showWinner(pos0Val);
+
+            turn.classList.add("hide");
             return true;
             }
         }
@@ -128,5 +131,15 @@ const new_game = () => {
 };
 
 newgame.addEventListener("click", new_game);
+
+
+const next_round = () => {
+     reset_game();
+
+    document.querySelector("#x-score").innerText = scoreX;
+    document.querySelector("#o-score").innerText = score0;
+};
+
+next.addEventListener("click", next_round);
 
 
