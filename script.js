@@ -72,6 +72,8 @@ const checkWinner = () => {
             showWinner(pos0Val);
 
             turn.classList.add("hide");
+            reset.classList.add("hide")
+            next.classList.remove("hide")
             return true;
             }
         }
@@ -135,6 +137,8 @@ newgame.addEventListener("click", new_game);
 
 const next_round = () => {
      reset_game();
+     next.classList.add("hide")
+     reset.classList.remove("hide")
 
     document.querySelector("#x-score").innerText = scoreX;
     document.querySelector("#o-score").innerText = score0;
