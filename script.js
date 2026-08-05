@@ -1,3 +1,4 @@
+let body = document.querySelector("body")
 let but = document.querySelectorAll(".button");
 let reset = document.querySelector(".reset");
 let newgame = document.querySelector(".newgame");
@@ -11,11 +12,21 @@ let start_but = document.querySelector("#start-button");
 let main_game = document.querySelector(".main-game");
 let turn = document.querySelector(".turn");
 let next = document.querySelector(".next");
+let dark = document.querySelector(".dark");
+let snd_off = document.querySelector(".sound-off");
+
+const clck_snd_tls = new Audio("sounds/mouse-click-tiles.mp3");
+const clck_snd_btn = new Audio("sounds/mouse-click-button.mp3");
+const win_snd = new Audio("sounds/winning-sound.mp3");
+const gm_st = new Audio("sounds/game-start.mp3");
+const gm_draw = new Audio("sounds/game-draw.mp3");
 
 let count = 0;
 let score0 = 0;
 let scoreX = 0;
 let turn0 = true;
+let sndOn = true;
+let mode =  "dark";
 
 let win_pat = [
     [0,1,2], [3,4,5], [6,7,8],
@@ -24,6 +35,10 @@ let win_pat = [
 
 start_but.addEventListener("click", () => {
     start_but.classList.add("popclass");
+    if(sndOn){
+        gm_st.play();
+        gm_st.playbackRate = 1.4;
+    }
 
     setTimeout(() => {
         start_menu.classList.add("hide");
@@ -47,6 +62,11 @@ but.forEach((el) => {
         }
         el.disabled = true;
 
+        if(sndOn){
+            clck_snd_tls.play();
+            clck_snd_tls.playbackRate = 3;
+        }
+
         count++;
         
         let isWinner = checkWinner();
@@ -56,6 +76,11 @@ but.forEach((el) => {
         if(count === 9 && !isWinner){
             console.log("draw");
             draw.classList.remove("hide");
+            reset.classList.add("hide")
+            next.classList.remove("hide")
+            if(sndOn){
+                gm_draw.play();
+            }
         }
     });
 });
@@ -74,6 +99,9 @@ const checkWinner = () => {
             turn.classList.add("hide");
             reset.classList.add("hide")
             next.classList.remove("hide")
+            if(sndOn){
+                win_snd.play();
+            }
             return true;
             }
         }
@@ -114,6 +142,10 @@ const reset_game = () => {
     draw.classList.add("hide");
     enable();
 
+    if(sndOn){
+        clck_snd_btn.play();
+    }
+
     but.forEach ((el) => {
         el.innerText = "";
         el.disabled = false;
@@ -145,5 +177,40 @@ const next_round = () => {
 };
 
 next.addEventListener("click", next_round);
+
+
+const dark_button = () => {
+    if(mode === "dark"){
+        body.style.backgroundColor = "#32031b";
+        mode = "light";
+        dark.innerText = "Light Mode";
+    } else {
+        body.style.backgroundColor = "#F39399";
+        mode = "dark";
+        dark.innerText = "Drak Mode";
+    }
+    
+    if(sndOn){
+        clck_snd_btn.play();
+    }
+}
+
+dark.addEventListener("click", dark_button);
+
+const snd = () => {
+    if(sndOn){
+        clck_snd_btn.play();
+    }
+
+    if(sndOn){
+        snd_off.innerText = "Sound On";
+        sndOn = false;
+    } else {
+        snd_off.innerText = "Sound Off";
+        sndOn = true;
+    }   
+}
+
+snd_off.addEventListener("click", snd);
 
 
