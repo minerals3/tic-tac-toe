@@ -166,7 +166,7 @@ body{
 .drawmsg{
     color: red;
     margin: 1rem;
-    font-size: 5rem;
+    font-size: 3rem;
     animation: pulse 1s infinite;
 }
 
